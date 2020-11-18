@@ -29,7 +29,12 @@
 <p>И даже это нельзя показывать:</p>
 
 <img src="images/db/table.jpg" width="700" alt=""/>
-	
+  
+<p>И, кстати, по-моему, строка </p>
+  <pre><code>&lt;?= 'Hello world' ?&gt;</code></pre>
+<p>не имеет смысла. Ибо хоть теги и правильные, но что делает эта строка?
+</p>
+
 <?php include("includes/layouts/authorinfo.php"); ?>
 </section>
 
