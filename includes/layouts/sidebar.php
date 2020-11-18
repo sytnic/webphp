@@ -1,7 +1,5 @@
-    <section id="sidebar"> 
-      <!--************************************************************************
-    Sidebar starts here. It contains a searchbox, sample ad image and links
-    ****************************************************************************-->
+<!--    <section id="sidebar"> 
+      
       <input type="text" placeholder="Search">
       <div id="adimage"><img src="images/300x250.gif" alt=""/></div>
       <nav>
@@ -17,4 +15,30 @@
           <li><a href="6.2.php" title="Link">6.2 Создать и протестировать БД</a></li>
         </ul>
       </nav>
+    </section>
+-->   
+<section id="sidebar"> 
+      <input type="text" placeholder="Search">
+      <div id="adimage"><img src="images/300x250.gif" alt=""/></div>
+      <nav> 
+      <ul>
+<?php 
+    $set = find_all_pages();
+    while($row = mysqli_fetch_assoc($set)) {
+      echo '<li>';
+      echo '<a href="page.php?id=';  // important place!
+      echo $row['id'];
+      echo '" ';
+ 
+      echo ' title="Link"> ';
+      echo htmlentities($row['number']);
+      echo ' ';
+      echo htmlentities($row['title']);
+      echo '</a></li>';     
+      
+  }
+
+?>
+</ul>
+     </nav>
     </section>
